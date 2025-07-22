@@ -40,7 +40,7 @@ export default function HomePage() {
       const data = await response.json()
 
       if (response.ok) {
-        setShortenedUrl(`https://ingjc.com/${data.shortKey}`)
+        setShortenedUrl(`https://infjc.com/${data.shortKey}`)
         setUrl("")
       } else {
         setError(data.error || "Failed to shorten URL")

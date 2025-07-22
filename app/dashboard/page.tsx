@@ -118,7 +118,7 @@ export default function DashboardPage() {
 
   const copyToClipboard = async (shortKey: string) => {
     try {
-      await navigator.clipboard.writeText(`https://ingjc.com/${shortKey}`)
+      await navigator.clipboard.writeText(`https://infjc.com/${shortKey}`)
       setCopySuccess(shortKey)
       setTimeout(() => setCopySuccess(null), 2000)
     } catch (err) {
@@ -258,7 +258,7 @@ export default function DashboardPage() {
 
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-blue-600">https://ingjc.com/{url.shortKey}</span>
+                          <span className="font-mono text-blue-600">https://infjc.com/{url.shortKey}</span>
                           <Button
                             variant="ghost"
                             size="sm"
@@ -270,7 +270,7 @@ export default function DashboardPage() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => window.open(`https://ingjc.com/${url.shortKey}`, "_blank")}
+                            onClick={() => window.open(`https://infjc.com/${url.shortKey}`, "_blank")}
                           >
                             <ExternalLink className="h-4 w-4" />
                           </Button>

@@ -1,4 +1,5 @@
 import { redirect, notFound } from "next/navigation"
+
 import connectDB from "@/lib/mongoose"
 import ShortenedUrl from "@/models/ShortenedUrl"
 
@@ -6,11 +7,13 @@ interface Props {
   params: { shortKey: string }
 }
 
-export default async function RedirectPage({ params }: Props) {
+export default async function page({ params }: Props) {
   try {
     await connectDB()
 
-    const url = await ShortenedUrl.findOne({ shortKey: params.shortKey })
+    const { shortKey } = await params
+
+    const url = await ShortenedUrl.findOne({ shortKey: shortKey })
 
     if (!url) {
       notFound()
@@ -44,12 +47,21 @@ export default async function RedirectPage({ params }: Props) {
     }
 
     // Increment click count
-    await ShortenedUrl.findOneAndUpdate({ shortKey: params.shortKey }, { $inc: { clicks: 1 } })
+    await ShortenedUrl.findOneAndUpdate({ shortKey: shortKey }, { $inc: { clicks: 1 } })
 
-    // Redirect to the original URL
-    redirect(url.originalUrl)
+    console.log("Redirecting to the original URL..." + url.originalUrl )
+
+
+    try {
+      redirect(url.originalUrl)
+      
+    } catch (error) {
+      throw error;
+    } 
+    
+  
   } catch (error) {
     console.error("Redirect error:", error)
-    notFound()
+    throw error;
   }
 }

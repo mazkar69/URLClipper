@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       message: "URL shortened successfully",
       shortKey: shortKey!,
-      shortenedUrl: `https://ingjc.com/${shortKey!}`,
+      shortenedUrl: `https://infjc.com/${shortKey!}`,
     })
   } catch (error) {
     console.error("Shorten error:", error)
