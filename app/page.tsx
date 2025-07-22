@@ -84,7 +84,7 @@ export default function HomePage() {
                     placeholder="https://example.com/very-long-url"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
-                    className="flex-1"
+                    className="flex-1 p-5"
                   />
                   <Button type="submit" disabled={loading}>
                     {loading ? "Shortening..." : "Shorten"}

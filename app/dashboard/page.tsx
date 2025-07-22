@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
 import { Trash2, Copy, ExternalLink, Plus, Edit } from "lucide-react"
-import { EditUrlModal } from "@/components/edit-url-modal.tsx"
+import { EditUrlModal } from "@/components/edit-url-modal"
 import { isValidUrl } from "@/lib/utils"
 
 export default function DashboardPage() {

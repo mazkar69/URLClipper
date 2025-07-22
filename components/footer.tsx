@@ -12,6 +12,18 @@ export function Footer() {
         <div className="text-center">
           <p className="text-gray-400">© {new Date().getFullYear()} URLCliper. All rights reserved.</p>
           <p className="text-gray-400 mt-2">A clean, fast, and secure URL shortening platform.</p>
+          <p className="text-gray-400 mt-4">
+            Made by{" "}
+            <a 
+              href="https://github.com/mazkar69" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+            >
+              AzKaaR  
+            </a>
+             {" "} with ❤️ 
+          </p>
         </div>
       </div>
     </footer>
